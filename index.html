@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Conversor de moedas</title>
+</head>
+<body>
+    
+    <main>
+        <div class="container">
+            <h1>💰 Conversor de Moedas 💰</h1>
+            <div class="container-flex">  
+                <label for="">
+                    <legend>Converter de: </legend>
+                    <p>R$ 💸Real brasileiro</p>
+                </label>
+                <label for="">
+                    <legend>Converter para: </legend>
+                    <select name="" id="selecao">
+                        <option>💵 Dolar americano</option>
+                        <option>💶 Euro</option>
+                        <option>💶 BRL -> USD</option>
+                    </select>
+                </label>
+                <label for="">
+                    <legend>Valor</legend>
+                    <input type="number"  id="input">
+                    <button id="butao">Converter</button>
+                </label> 
+            </div>
+            <section class="paisCoins">
+                <div class="pais ">
+                    <img src="US-CSS.png" c alt="Brasil">
+                    <span>Dolar</span>
+                    <h2 id="valuereais">U$ </h2>
+                </div>
+                <div class="pais">
+                    <img src="bandeira-oficial-do-brasil-removebg-preview_resized_resized_resized.png" class="img-dinherio" alt="Pais">
+                    <span>Reais</span>
+                    <h2 id="valueMoneyBr">BRL$</h2>
+                </div>
+                <div class="pais">
+                    <img src="euro-currency-index--600.png"  alt="Pais">
+                    <span>Euro</span>
+                    <h2 id="valueMoney">EUR$ </h2>
+                </div>
+              
+            </section>
+        </div>
+    </main>
+
+
+    <script src="app.js"></script>
+    <script src="https://unpkg.com/scrollreveal" defer></script>
+</body>
+</html>
