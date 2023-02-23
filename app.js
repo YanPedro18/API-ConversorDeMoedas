@@ -1,7 +1,7 @@
 
 
-const coins2 = document.querySelector('.paisCoins');
-butao.addEventListener('click',  coins);
+let coins2 = document.querySelector('.paisCoins');
+
 
 
 async function coins(e) {
@@ -22,35 +22,88 @@ async function coins(e) {
     const moneyTrue = document.querySelector("#valuereais");
     const moneyTrueBR = document.querySelector('#valueMoneyBr');
     const moneyTrueEUR = document.querySelector('#valueMoney');
-    const butao = document.querySelector('#butao');
+    let butao = document.querySelector('#butao');
 
     if(inputValue == '') {
         alert("Campo vazio, digite algo!");
-       }
 
-    if (SelectValue === "💵 Dolar americano"  || SelectValue === "💶 Euro" || SelectValue === "💶 BRL -> USD") {
-        const valorTotal = inputValue / moedaDoll;
-    
-        coins2.style.opacity = '100'
-        moneyTrue.insertAdjacentHTML("beforeend", valorTotal.toFixed(2)); 
-       
-        const valorTotalEUR = inputValue / moedaEUR;
-        moneyTrueEUR.insertAdjacentHTML("beforeend", valorTotalEUR.toFixed(2));
-        coins2.style.display = 'flex';
+        function limpeza(e) {
+            e.preventDefault();
+            if (inputValue.value === "") {
+                SelectValue = "";
+                moneyTrue = "0";
+                moneyTrueBR = "0";
+                moneyTrueEUR = "0";
+                coins2.style.display = "";
+                coins2.style.opacity = ""; 
+            }
+        }
+        
+       }else {
 
-        const valorTotalBRL = inputValue * moedaDoll;
-        moneyTrueBR.insertAdjacentHTML("beforeend", valorTotalBRL.toFixed(2));
+        if (SelectValue === "💵 Dolar americano"  || SelectValue === "💶 Euro" || SelectValue === "💶 BRL -> USD") {
+            //quando adicionar um valor a um id ou class, precisamos reseta-la para um novo valor vir
+            moneyTrue.innerHTML = '';
+            const valorTotal = inputValue / moedaDoll;
 
-    }else {
-        alert('algo errado')
+            moneyTrue.insertAdjacentHTML("beforeend", `U$ ${valorTotal.toFixed(2)}`); 
+           
+            moneyTrueEUR.innerHTML = '';
+            const valorTotalEUR = inputValue / moedaEUR;
+            
+            moneyTrueEUR.insertAdjacentHTML("beforeend", `€ ${valorTotalEUR.toFixed(2)}`);
+           
+          
+            coins2.style.opacity = '100';
+            coins2.style.display = 'flex';
+            
+            moneyTrueBR.innerHTML = '';
+            const valorTotalBRL = inputValue * moedaDoll;
+        
+            moneyTrueBR.insertAdjacentHTML("beforeend", `R$ ${valorTotalBRL.toFixed(2)}`);
+           
+        }
+        
+        // butao.removeEventListener('click', coins)
+
     }
-    
-    butao.removeEventListener('click', coins)
+
 
 }
 
+// let input = document.getElementById('input');
+// input.addEventListener('input', function() {
+//     // resetar o valor das variáveis que guardam o valor de saída
+//     document.querySelector("#valuereais").innerHTML = "";
+//     document.querySelector("#valueMoneyBr").innerHTML = "";
+//     document.querySelector("#valueMoney").innerHTML = "";
+
+//     // chamar a função coins() novamente com o novo valor inserido pelo usuário
+//     coins();
+// });
+
+butao.addEventListener('click',  coins);
 
 
 
 
-
+var speed = {
+    distance: '-50px',
+    duration: 1400,
+    delay: 400
+    };
+    
+    var speedmin = {
+    distance: '-10px',
+    duration: 1400,
+    delay: 400
+    };
+    window.sr = ScrollReveal({ reset: true });
+    
+    sr.reveal('.container-flex', speed ,{delay: 200, origin:'top',});
+    
+   
+    sr.reveal('',speedmin,{
+    duration: 1000,
+    });
+   

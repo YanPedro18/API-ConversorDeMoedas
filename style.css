@@ -42,12 +42,15 @@ span {
     max-width: 70%;
     flex: 2;
     height: 30%;
-    border: 1px solid #DA0037;
+    background-color: #252525;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 
 legend {
     margin-top: .9rem;
     margin-bottom: .4rem;
+    font-size: 1.4rem;
+    font-weight: bold;
 }
 select {
     cursor: pointer;
@@ -70,42 +73,57 @@ select{
 select,
 input::placeholder,
 input:focus {
+    border-radius: 50px;
     outline: none;
 }
 
 input[type=number]::-webkit-inner-spin-button {
     -webkit-appearance: none;
 }
-
+input {
+    gap: 20px;
+}
 option{
     color: #DA0037;
 }
 button {
     margin: 0 auto;
     word-wrap: break-word;
+    gap: 20px;
 }
 
+
 .paisCoins {
+   
     transition: all 600ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
     display: flex;
     opacity: 0;
     margin: 0 auto;
     justify-content: center;
-    width: 70%;
-    height: 30%;
+    width: 69%;
+    height: 50%;
+    z-index: -999;
     color: white;
     box-shadow:  #da003752 0px 6px 12px -2px,
     rgba(167, 21, 21, 0.3) 0px 3px 7px -3px;
     transition: all 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     background-color: #DA0037;
 }
+.paisCoins:hover {
+    border-radius: 30px;
+}
 .paisCoins > div > img {
-    border-radius: 300px;
-    max-width: 15%;
+    border-radius: 100px;
+    max-width: 20% ;
     transition: all 500ms cubic-bezier(0.39, 0.575, 0.565, 1);
     cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
-
+span {
+    background-color: #252525;
+    padding: .2rem;
+    border-radius: 90px;
+}
 .pais {
     display: flex;
     flex-direction: column;
@@ -114,7 +132,6 @@ button {
     margin: 0 auto;
     text-align: center;
     z-index: 9;
-    
 }
 .pais > img:hover {
     transform: scale(1.3);
@@ -125,7 +142,7 @@ button {
 }
 #butao {
     outline: none;
-    border: none;
+    border: 0;
     background-color: #202020;
     color: #DA0037;
     padding: .5rem;
@@ -133,9 +150,10 @@ button {
 }
 button:hover {
     cursor: pointer;
-    border-radius: 30px;
+    border-radius: 10px;
+    padding: .3rem;
     background-color: none;
-    border: 1px solid #DA0037;
+    border: 0.1px dashed #DA0037 !important;
     box-shadow:  #da003752 0px 6px 12px -2px,
     rgba(167, 21, 21, 0.3) 0px 3px 7px -3px;
     transition: all 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -146,19 +164,28 @@ button:hover {
         font-size: 1.6rem;
     }
     .paisCoins {
-        flex-direction: column;
-        height: 60%;
+        font-size: 0.7rem;
+        flex-direction: flex;
+        height: 35%;
         border-radius: 30px;
+          box-sizing: border-box;
     }
     .paisCoins > div > img {
-        max-width: 23%;
+        max-width: 53%;
     }
     .pais > h2 {
-        margin: 0.6rem 0 0.6rem 0;
+        margin: 0.4rem 0 0.4rem 0;
     }
     .container-flex {
         flex-direction: column;
         text-align: center;
         height: 52%;
     }
+    legend {
+        text-align: center;
+    }
+    label {
+        padding: 5%;
+    }
+
 }
