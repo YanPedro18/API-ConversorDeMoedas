@@ -18,9 +18,9 @@ main > h1 {
 .container {
     width: 100%;
     height: 100vh;
-   background-color: #171717;
-   color: #DA0037;
-   font-weight: 600;
+    background-color: #171717;
+    color: #DA0037;
+    font-weight: 600;
 }
 span {
     margin: .5rem 0 .5rem 0;
@@ -28,6 +28,7 @@ span {
 .container > h1 {
     text-align: center;
     margin-top: 7rem;
+
 }
 .container-flex {
     display: flex;
@@ -38,10 +39,10 @@ span {
     top: 30%;
     left: 30%;
     transform: translate(-42.9%, -50%);
-    word-wrap: break-word;
+    flex-wrap: wrap;
+    z-index: 9999;
     max-width: 70%;
-    flex: 2;
-    height: 30%;
+    height: 22%;
     background-color: #252525;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
@@ -89,19 +90,33 @@ option{
 button {
     margin: 0 auto;
     word-wrap: break-word;
-    gap: 20px;
 }
-
-
+#butao {
+    outline: none;
+    background-color: #202020;
+    color: #DA0037;
+    border: 1px solid #da003700;
+    margin-left: .2rem;
+    padding: .5rem;
+    transition: all 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+button:hover {
+    cursor: pointer;
+    border-radius: 10px;
+    background-color: none;
+    border: 1px dashed #DA0037 !important;
+    box-shadow:  #da003752 0px 6px 12px -2px,
+    rgba(167, 21, 21, 0.3) 0px 3px 7px -3px;
+    transition: all 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
 .paisCoins {
-   
-    transition: all 600ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
+    transition: all 700ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
     display: flex;
     opacity: 0;
     margin: 0 auto;
     justify-content: center;
     width: 69%;
-    height: 50%;
+    height: 60%;
     z-index: -999;
     color: white;
     box-shadow:  #da003752 0px 6px 12px -2px,
@@ -110,6 +125,7 @@ button {
     background-color: #DA0037;
 }
 .paisCoins:hover {
+    transform: translate(-0%, 10%);
     border-radius: 30px;
 }
 .paisCoins > div > img {
@@ -140,38 +156,28 @@ span {
 ::selection {
     color: #af012d;
 }
-#butao {
-    outline: none;
-    border: 0;
-    background-color: #202020;
-    color: #DA0037;
-    padding: .5rem;
-    transition: all 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-}
-button:hover {
-    cursor: pointer;
-    border-radius: 10px;
-    padding: .3rem;
-    background-color: none;
-    border: 0.1px dashed #DA0037 !important;
-    box-shadow:  #da003752 0px 6px 12px -2px,
-    rgba(167, 21, 21, 0.3) 0px 3px 7px -3px;
-    transition: all 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-}
-
-@media screen and (max-width: 435px) {
+@media screen and (max-width: 435px)  {
+    .container {
+        margin: 0 auto ;
+        width: 100vw;
+    }
     .container > h1 {
         font-size: 1.6rem;
     }
     .paisCoins {
+        transform: translateY(40%);
         font-size: 0.7rem;
         flex-direction: flex;
         height: 35%;
         border-radius: 30px;
-          box-sizing: border-box;
+        box-sizing: border-box;
+    }
+    .paisCoins:hover {
+        transform: translateY(45%);
+        border-radius: 30px;
     }
     .paisCoins > div > img {
-        max-width: 53%;
+        max-width: 57%;
     }
     .pais > h2 {
         margin: 0.4rem 0 0.4rem 0;
@@ -179,13 +185,36 @@ button:hover {
     .container-flex {
         flex-direction: column;
         text-align: center;
-        height: 52%;
+        height: 75%;
+        max-width: 100%;
+        
     }
     legend {
         text-align: center;
+        font-size: 1.4rem;
     }
     label {
         padding: 5%;
     }
-
+    .container > h1::before {
+        content: "";
+        background-color: #DA0037;
+        position: absolute;
+        top: 18%;
+        max-height: 2%;
+        transform: translate(-50%);
+        right: 0;
+        width: 50%;
+        border-bottom: 2px double #DA0037;
+    }
+    p {
+        color: white;
+    }
+    input {
+        width: 100%;
+    }
+    #butao {
+        margin-top: 5%;
+        width: 40%;
+    }
 }
