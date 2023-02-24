@@ -156,13 +156,40 @@ span {
 ::selection {
     color: #af012d;
 }
-@media screen and (max-width: 435px)  {
-    .container {
-        margin: 0 auto ;
-        width: 100vw;
-    }
+
+
+@media screen and (max-width: 435px) and (min-width: 360px)  {
+
     .container > h1 {
         font-size: 1.6rem;
+    }
+    .container-flex {
+        flex-direction: column;
+        text-align: center;
+        height: 75%;
+        max-width: 100%;
+    }
+    .container > h1::before {
+        content: "";
+        background-color: #DA0037;
+        position: absolute;
+        top: 23%;
+        max-height: 2%;
+        transform: translate(-50%);
+        right: 0;
+        width: 50%;
+        border-bottom: 2px double #DA0037;
+    }
+    legend {
+        text-align: center;
+        font-size: 1.5rem;
+    }
+    input {
+        width: 95%;
+    }
+    #butao {
+        margin-top: 5%;
+        width: 40%;
     }
     .paisCoins {
         transform: translateY(40%);
@@ -172,49 +199,17 @@ span {
         border-radius: 30px;
         box-sizing: border-box;
     }
+    .paisCoins > div > img {
+        max-width: 57%;
+    }
     .paisCoins:hover {
         transform: translateY(45%);
         border-radius: 30px;
     }
-    .paisCoins > div > img {
-        max-width: 57%;
-    }
     .pais > h2 {
-        margin: 0.4rem 0 0.4rem 0;
-    }
-    .container-flex {
-        flex-direction: column;
-        text-align: center;
-        height: 75%;
-        max-width: 100%;
-        
-    }
-    legend {
-        text-align: center;
-        font-size: 1.4rem;
-    }
-    label {
-        padding: 5%;
-    }
-    .container > h1::before {
-        content: "";
-        background-color: #DA0037;
-        position: absolute;
-        top: 18%;
-        max-height: 2%;
-        transform: translate(-50%);
-        right: 0;
-        width: 50%;
-        border-bottom: 2px double #DA0037;
+        margin: 0.3rem 0 0.3rem 0;
     }
     p {
         color: white;
-    }
-    input {
-        width: 100%;
-    }
-    #butao {
-        margin-top: 5%;
-        width: 40%;
     }
 }
