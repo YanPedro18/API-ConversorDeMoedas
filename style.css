@@ -41,7 +41,7 @@ span {
     transform: translate(-42.9%, -50%);
     flex-wrap: wrap;
     z-index: 9999;
-    max-width: 70%;
+    width: 70%;
     height: 22%;
     background-color: #252525;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
@@ -115,7 +115,7 @@ button:hover {
     opacity: 0;
     margin: 0 auto;
     justify-content: center;
-    width: 69%;
+    width: 68.9%;
     height: 60%;
     z-index: -999;
     color: white;
@@ -168,7 +168,6 @@ span {
         text-align: center;
         height: 75%;
         margin-top: 7rem;
-   
     }
     .container > h1::before {
         content: "";
@@ -182,8 +181,11 @@ span {
         border-bottom: 2px double #DA0037;
     }
     legend {
-        text-align: center;
+        
         font-size: 1.5rem;
+    }
+    label > legend {
+        text-align: center !important;
     }
     input {
         width: 95%;
@@ -195,6 +197,7 @@ span {
     .paisCoins {
         transform: translateY(-20%);
         font-size: 0.7rem;
+        width: 75%;
         flex-direction: flex;
         height: 35%;
         border-radius: 30px;
@@ -204,7 +207,7 @@ span {
         max-width: 57%;
     }
     .paisCoins:hover {
-        transform: translateY(-5%);
+        transform: translateY(-9%);
         border-radius: 30px;
     }
     .pais > h2 {
